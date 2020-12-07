@@ -8,8 +8,8 @@
 
 std::vector< char > foo(std::list< Human >& people)
 {
-  vector <char> v;
-  vector <char> vout;
+  std::vector <char> v;
+  std::vector <char> vout;
     // Twoja implementacja tutaj
     for(Human e:people)
     {
