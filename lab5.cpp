@@ -7,17 +7,20 @@ using namespace std;
 
 std::vector< char > foo(std::list< Human >& people)
 {
-    vector< char > v;
-    vector< char > vout;
+    std::vector< char > v;
+    std::vector< char > vout;
     // Twoja implementacja tutaj
     for (Human e : people) {
         e.birthday();
-        if (e.isMonster())
+        if (e.isMonster() == true) {
             v.push_back('y');
-        else
+        }
+        else {
             v.push_back('n');
+        }
     }
-    for (unsigned int i = 0; i < v.size(); i++) {
+
+    for (unsigned int i = 1; i < v.size(); i++) {
         vout.push_back(v[v.size() - i]);
     }
     return {vout};
@@ -25,6 +28,25 @@ std::vector< char > foo(std::list< Human >& people)
 
 int main()
 {
+    list< Human > l;
+    for (int i = 0; i < 10; i++) {
+        if (i % 3 == 0) {
+            Human c{"jan", 15, true, true};
+            l.push_back(c);
+        }
+        else if (i % 3 == 1) {
+            Human c{"jan", 15, true, false};
+            l.push_back(c);
+        }
+        else {
+            Human c{"jan", 15, false, false};
+            l.push_back(c);
+        }
+    }
+    vector< char > v = foo(l);
+    for (char e : v) {
+        cout << e << endl;
+    }
     /*vector< int > vint;
     int           numer;
     for (int i = 0; i < 100; i++) {
