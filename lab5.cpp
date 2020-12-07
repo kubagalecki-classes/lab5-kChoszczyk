@@ -10,9 +10,9 @@ std::vector< char > foo(std::list< Human >& people)
     std::vector< char > v;
     std::vector< char > vout;
     // Twoja implementacja tutaj
-    for (Human e : people) {
-        e.birthday();
-        if (e.isMonster() == true) {
+    for (list< Human >::reverse_iterator it = people.rbegin(); it != people.rend(); ++it) {
+        it->birthday();
+        if (it->isMonster() == true) {
             v.push_back('n');
         }
         else {
@@ -23,7 +23,7 @@ std::vector< char > foo(std::list< Human >& people)
     for (unsigned int i = 1; i <= v.size(); ++i) {
         vout.push_back(v[v.size() - i]);
     }
-    return {vout};
+    return {v};
 }
 
 int main()
@@ -46,6 +46,9 @@ int main()
     vector< char > v = foo(l);
     for (char e : v) {
         cout << e << endl;
+    }
+    for (Human e : l) {
+        cout << e.getAge() << endl;
     }
     /*vector< int > vint;
     int           numer;
