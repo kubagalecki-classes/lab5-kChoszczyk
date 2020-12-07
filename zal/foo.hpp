@@ -20,7 +20,7 @@ std::vector< char > foo(std::list< Human >& people)
       {v.push_back('y');}
     }
     
-    for (unsigned int i=1;i<v.size();i++)
+    for (unsigned int i=1;i<=v.size();i++)
     {
       vout.push_back(v[v.size()-i]);
     }

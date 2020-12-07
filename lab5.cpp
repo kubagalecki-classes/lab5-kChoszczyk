@@ -13,14 +13,14 @@ std::vector< char > foo(std::list< Human >& people)
     for (Human e : people) {
         e.birthday();
         if (e.isMonster() == true) {
-            v.push_back('y');
+            v.push_back('n');
         }
         else {
-            v.push_back('n');
+            v.push_back('y');
         }
     }
 
-    for (unsigned int i = 1; i < v.size(); i++) {
+    for (unsigned int i = 1; i <= v.size(); ++i) {
         vout.push_back(v[v.size() - i]);
     }
     return {vout};
